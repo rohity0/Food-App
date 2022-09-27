@@ -1,8 +1,7 @@
 
 # Food App
 
-Hello everyone, here is my Food App project which I builded in unit-3 with the help of `https://www.themealdb.com/api.php` api. Link of deployment:- lucent-pudding-9ded43.netlify.app/ 
-
+Hello everyone, here is my Food App project which I builded in unit-3 with the help of `https://www.themealdb.com/api.php` api. Link of deployment:- https://lucent-pudding-9ded43.netlify.app/
 
 ## Features
 
