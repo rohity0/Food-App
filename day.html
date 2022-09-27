@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="common.css" />
+
+    <style></style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="container"></div>
+  </body>
+</html>
+<script type="module">
+  import navbar from "./commonnav/navbar.js";
+  document.querySelector("#nav").innerHTML = navbar();
+
+  import { getData } from "./script/func.js";
+  let url = `https://www.themealdb.com/api/json/v1/1/random.php`;
+  let data = await getData(url);
+  let box1 = document.querySelector("#container");
+  console.log(data);
+
+  import { showFood } from "./script/secondFun.js";
+
+  showFood(data, box1);
+</script>

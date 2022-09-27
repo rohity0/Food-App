@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="navbar.css" />
+  </head>
+  <style>
+    #search > div {
+      text-align: center;
+      /* border: 1px solid; */
+    }
+    input {
+      width: 40%;
+      padding: 10px;
+      border-radius: 5px;
+      border-right: 0;
+      border-style: double;
+    }
+    button {
+      margin-left: -10px;
+      padding: 10px;
+      border: 2px solid;
+      border-left: 0;
+      border-color: gray;
+    }
+    #food {
+      /* border: 1px solid; */
+      width: 46%;
+      height: 300px;
+      border-top: none;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: unset;
+      margin: auto;
+    }
+    #food > div {
+      display: flex;
+      margin-left: 5px;
+      background-color: white;
+      /* padding: 5px; */
+      align-items: center;
+    }
+    #food > div > p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #food > div > img {
+      width: 30%;
+      padding-right: 15px;
+      padding: 5px;
+    }
+  </style>
+  <body>
+    <div id="nav"></div>
+
+    <div id="search">
+      <div>
+        <input type="text" placeholder="Search" id="meal" />
+        <button>Search</button>
+      </div>
+      <div id="food"></div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import navbar from "./commonnav/navbar.js";
+  document.querySelector("#nav").innerHTML = navbar();
+
+  import { getData, showFood } from "./script/func.js";
+
+  let start;
+  let debounce = (food, delay) => {
+    if (start) {
+      clearTimeout(start);
+    }
+
+    start = setTimeout(function () {
+      food();
+    }, delay);
+  };
+
+  let food = async (a) => {
+    console.log(a);
+    let container = document.querySelector("#food");
+    let val = document.querySelector("#meal").value;
+    let url = `https://themealdb.com/api/json/v1/1/search.php?s=${val}`;
+    let data = getData(url);
+    let info = await data;
+
+    showFood(info, container);
+  };
+
+  document.addEventListener("input", () => {
+    debounce(food, 1000);
+  });
+
+  //
+</script>

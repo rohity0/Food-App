@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  /* font-family: sans-serif; */
+}
+#nav {
+  display: flex;
+  height: 50px;
+  /* border: 1px solid; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: rgb(184, 131, 88);
+  margin-bottom: 25px;
+}
+#nav > div {
+  /* border: 1px solid red; */
+  width: 40%;
+  display: flex;
+}
+#nav > div > p {
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 0;
+}
+#nav > div :hover {
+  background-color: aqua;
+  color: white;
+}
+.home {
+  font-size: 20px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: black;
+}

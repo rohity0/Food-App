@@ -1,0 +1,30 @@
+body {
+  background-color: aquamarine;
+}
+
+#container > div {
+  margin: auto;
+  /* border: 1px solid; */
+  text-align: center;
+}
+#container > div > img {
+  width: 80%;
+  height: 400px;
+  margin: auto;
+}
+#container > div > div {
+  width: 70%;
+  border: 1px solid;
+  margin: auto;
+  text-align: justify;
+  line-height: 20px;
+  margin-top: 10px;
+}
+#container > div > div > h1 {
+  text-align: center;
+  padding: 20px;
+}
+#container > div > div > p {
+  line-height: 2;
+  padding: 2px;
+}
